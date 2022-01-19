@@ -1,15 +1,7 @@
-"use strict";
-var Components;
-(function (Components) {
-    var SubComponents;
-    (function (SubComponents) {
-        var Test = /** @class */ (function () {
-            function Test() {
-            }
-            return Test;
-        }());
-        SubComponents.Test = Test;
-    })(SubComponents = Components.SubComponents || (Components.SubComponents = {}));
+define("components", ["require", "exports"], function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    exports.Footer = exports.Content = exports.Header = void 0;
     var Header = /** @class */ (function () {
         function Header() {
             var elem = document.createElement("div");
@@ -18,7 +10,7 @@ var Components;
         }
         return Header;
     }());
-    Components.Header = Header;
+    exports.Header = Header;
     var Content = /** @class */ (function () {
         function Content() {
             var elem = document.createElement("div");
@@ -27,7 +19,7 @@ var Components;
         }
         return Content;
     }());
-    Components.Content = Content;
+    exports.Content = Content;
     var Footer = /** @class */ (function () {
         function Footer() {
             var elem = document.createElement("div");
@@ -36,19 +28,19 @@ var Components;
         }
         return Footer;
     }());
-    Components.Footer = Footer;
-})(Components || (Components = {}));
-// <referen path="./components.ts"></referen>
-var Home;
-(function (Home) {
+    exports.Footer = Footer;
+});
+define("page", ["require", "exports", "components"], function (require, exports, components_1) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    exports.Page = void 0;
     var Page = /** @class */ (function () {
         function Page() {
-            this.user = { name: "123" };
-            new Components.Header();
-            new Components.Content();
-            new Components.Footer();
+            new components_1.Header();
+            new components_1.Content();
+            new components_1.Footer();
         }
         return Page;
     }());
-    Home.Page = Page;
-})(Home || (Home = {}));
+    exports.Page = Page;
+});

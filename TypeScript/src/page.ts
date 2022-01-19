@@ -1,12 +1,8 @@
-
-// <referen path="./components.ts"></referen>
-namespace Home {
-    export class Page {
-        user: Components.User = { name: "123" }
-        constructor() {
-            new Components.Header()
-            new Components.Content()
-            new Components.Footer()
-        }
+import { Header, Content, Footer } from "./components"
+export class Page {
+    constructor() {
+        new Header()
+        new Content()
+        new Footer()
     }
 }
